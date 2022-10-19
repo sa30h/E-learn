@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>STUC | {% block title %}{% endblock title %}</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet"  href="{% static 'stuc/css/all.css' %}">
+	<link rel="stylesheet"  href="{% static 'stuc/css/bootstrap.css' %}">
+</head>
+<body>
+	<style >
+		.main{
+			min-height: 100vh;
+			height: 100%;
+		}
+	</style>
+
+<header>
+	{% include 'stuc/nav.html' %}
+
+</header>
+
+
+<content >
+	
+	<div class="main">
+
+		{% if messages %}
+		<div class="alert alert-warning alert-dismissible fade show myx-5" role="alert">
+    {% for message in messages %}
+	<strong>{{message}}</strong> 
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endfor %}
+		</div>
+{% endif %}
+	
+ 		{% block content %} 
+
+	{% endblock content %}
+	</div>
+	
+	{% block msg %}
+	{% endblock msg %}
+	
+
+</content>
+<footer>
+	{% block footer %}{% endblock footer %}
+</footer>
+
+
+
+<script src="{% static 'stuc/js/jquery.js'%}"></script>
+
+ <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> 
+<script src="{% static 'stuc/js/function.js'%}"></script>
+
+<script src="{% static 'stuc/js/popper.js'%}"></script>
+<script src="{% static 'stuc/js/all.js'%}"></script>
+<script src="{% static 'stuc/js/bootstrap.js'%}"></script>  
+
+</body>
+</html>

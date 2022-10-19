@@ -1,0 +1,37 @@
+{% extends "stuc/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="container">
+
+  <div class="row my-2 px-2">
+
+  <div class="col mx-5">
+
+        <table class="table table-hover " >
+            <thead>
+              <tr >
+
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for item in usersdata %}
+               <tr class="card my-1">
+                    <th  scope="row"><a href="{% url "coursecareerdetail" item.id %}" class="nav-link" >{{item.career_name}}</a></th>
+                   </tr>
+                  
+                {% endfor %}
+           
+            
+            </tbody>
+          </table>
+
+      </div>
+     
+    </div>
+    
+</div>
+
+{% endblock content %}
+{% block footer %}{% include 'course/snippet/paginatorsnippet.html' with usersdata=usersdata %}{% endblock footer %}

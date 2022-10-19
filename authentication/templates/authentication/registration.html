@@ -1,0 +1,122 @@
+{% extends "stuc/base.html" %}
+{% load static %}
+{% block title %}
+SignUp
+{% endblock title %}
+{% block content %}
+ <style >
+
+  .form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {a
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#id_position{
+  padding: 10px;
+  margin-bottom:5px;
+  min-width: 48vh
+}
+#id_create_entry{
+  padding: 10px;
+  margin-bottom:5px;
+ min-width: 48vh
+}
+#id_read_entries{
+  padding: 10px;
+  margin-bottom:5px;
+
+}
+#id_edit_entry{
+  padding: 10px;
+  margin-bottom:5px;
+ min-width: 48vh
+}
+#id_delete_entry{
+  padding: 10px;
+  margin-bottom:5px;
+ min-width: 48vh
+}
+
+.rowdir{
+    
+}
+
+#id_position{
+  max-width:250px;
+  min-width: 250px;
+
+}
+#id_department{
+  max-width:250px;
+  min-width: 250px;
+  padding: 10px;
+}
+ </style>
+ <div class="container">
+   <div class="row">
+     <div class="col-5">
+        <h1 class="display-4">Sign UP</h1>
+<form method="POST">
+    {% csrf_token %}
+
+
+      <main class="form-signin ">
+
+      
+
+        <div class="form-floating">
+      <input type="text" name="username" class="form-control" id="floatingInput" >
+      <label for="floatingInput">Username</label>
+    </div> 
+
+
+ <div class="form-floating">
+      <input type="password" name="password1" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div> 
+
+   <div class="form-floating">
+      <input type="password" name="password2" class="form-control" id="floatingPassword" placeholder="Repeat Password">
+      <label for="floatingPassword">Repeat Password</label>
+    </div>  
+
+
+
+    <button class="w-100 btn btn-lg btn-primary my-2" type="submit">SignUp</button>
+</main>
+    
+  </form>
+     </div>
+         
+</div>
+   </div>
+ </div>
+ 
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends "stuc/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="container">
+
+  <div class="row my-2 px-2">
+
+  <div class="col mx-5">
+
+        <table class="table table-hover " >
+            <thead>
+              <tr >
+
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for item in usersdata %}
+               <tr class="card my-1">
+                    <th  scope="row"><a href="{% url "coursedetail" item.id %}" class="nav-link" onClick={setActiveTab}>{{item.title}}</a></th>
+                   </tr>
+                  
+                {% endfor %}
+           
+            
+            </tbody>
+          </table>
+
+      </div>
+     
+    </div>
+    
+</div>
+<script>
+  console.log("api hit")
+  setActiveTab = (e) => {
+    e.preventDefault();
+    console.log("in useaction")
+    console.log(e.target);
+}
+  const userAction = async (id) => {
+    console.log("in useaction")
+    const response = await fetch('http://127.0.0.1:8000/course/c_coursevisitor/', {
+      method: 'POST',
+      body: id.tostring, // string or object
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const myJson = await response.json();
+    console.log(myJson)
+     //extract JSON from the http response
+    // do something with myJson
+  }
+</script>
+{% endblock content %}
+{% block footer %}{% include 'course/snippet/paginatorsnippet.html' with usersdata=usersdata %}{% endblock footer %}

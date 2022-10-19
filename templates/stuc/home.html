@@ -1,0 +1,40 @@
+
+
+{% extends "stuc/base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+<style type="text/css">
+  h1 {
+    background: -webkit-linear-gradient(#09a2de, #3ad6cb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px #333;
+  }
+</style>
+<div class="container">
+  <div class="row">
+
+
+  </div>
+  <div class="row">
+    <div class="col-8 my-5">
+      <img src="{% static 'images/stuc.jpg' %}" class="img-fluid" alt="Image1" width="70%" height="100%" style="border:10px;border-radius:20px">
+    </div>
+
+    <div class="col-4">
+
+      <div class="col my-5">
+        <h1 style="font-size:90px">E-Learn</h1>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}

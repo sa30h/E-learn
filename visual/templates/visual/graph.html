@@ -1,0 +1,58 @@
+{% extends "stuc/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="container">
+
+  <div class="row my-2 px-2">
+
+  <div class="col mx-5">
+    <div>
+        <canvas id="coursechart"></canvas>
+      </div>
+      
+      </div>
+     
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+  const visitorcountlist={{visitorcountlist | safe}};
+  const courselabellist={{courselabellist | safe}}
+
+  console.log(visitorcountlist,courselabellist)
+
+
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+  
+    const data = {
+      labels: courselabellist,
+      datasets: [{
+        label: 'Course',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: visitorcountlist,
+      }]
+    };
+  
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('coursechart'),
+        config
+      );
+  </script>
+   
+{% endblock content %}

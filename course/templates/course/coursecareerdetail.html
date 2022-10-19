@@ -1,0 +1,39 @@
+{% extends "stuc/base.html" %}
+{% load static %}
+{% block title %} Detail{% endblock title %}
+{% block content %}
+
+<div class="container" >
+
+    <div class="row">
+        
+        <div class="col my-5">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <a class="btn btn-outline-primary" href="{% url 'updatecoursecareer' data.id %}">UPDATE</a>
+                <a class="btn btn-outline-danger" href="{% url 'coursecareerdelete' data.id %}">DELETE</a>
+              </div>        
+        </div>
+        <div class="row ">
+            <figure>
+                <blockquote class="blockquote">
+                  <p>{{data.career_name}}</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  {{data.description}}
+                </figcaption>
+              </figure>
+        </div>
+        <div class="row ">
+       Skill: {{data.skill}}
+        </div>
+        <div class="row ">
+           Salary: {{data.salary}}
+             </div>
+             <div class="row ">
+              Location:  {{data.jobLocation}}
+                 </div>
+    </div>
+
+</div>
+
+{% endblock content %}

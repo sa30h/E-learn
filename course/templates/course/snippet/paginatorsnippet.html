@@ -1,0 +1,27 @@
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if usersdata.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?{% if query %}q={{query}}&{% endif %} page={{userdata.previos_page_number}}" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      {% endif %}
+
+      {% for i in usersdata.paginator.page_range %}
+      {% if usersdata.number == i %}
+         <li class="page-item"><a class="page-link" >{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?{% if query %}q={{query}}&{% endif %}page={{i}}">{{i}}</a></li>
+
+        {% endif %}
+      {% endfor %}
+
+      {% if usersdata.has_next %}
+      <li class="page-item ">
+        <a class="page-link" href="?{% if query %}q={{query}}&{% endif %}page={{usersdata.next_page_number}}" tabindex="-1"  aria-disabled="true">next</a>
+      </li>
+      {% endif %}
+  
+    </ul>
+  </nav>
