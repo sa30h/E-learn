@@ -20,7 +20,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'allcourse' %}">All Courses</a></li>
-            <li><a class="dropdown-item" href="{% url 'createcourse' %}">Add Course</a></li>
+            {% comment %} <li><a class="dropdown-item" href="{% url 'createcourse' %}">Add Course</a></li> {% endcomment %}
 
           </ul>
         </li>
@@ -35,7 +35,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'userlogout' %}">Contact Us </a>
+          {% comment %} <a class="nav-link" href="{% url 'userlogout' %}">Contact Us </a> {% endcomment %}
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'graph' %}">Statistics</a>
