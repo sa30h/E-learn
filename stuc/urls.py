@@ -30,7 +30,7 @@ urlpatterns = [
 
 
 
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.STATIC_URL,'django.views.static.serve', {'document_root': settings.STATIC_ROOT})
 
 # if not settings.DEBUG:
 #     urlpatterns +=('',
