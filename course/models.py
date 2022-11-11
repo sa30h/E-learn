@@ -27,4 +27,12 @@ class coursecareer(models.Model):
     salary=models.FloatField()
     jobLocation=models.CharField( max_length=100)
 
+# class counselling(models.Model):
+#     name=models.CharField( max_length=100)
+#     age=models.PositiveIntegerField()
+#     skills=models.CharField(max_length=200 ,blank=True,null=True)
+#     interests=models.CharField(max_length=200)
+
+
+
     

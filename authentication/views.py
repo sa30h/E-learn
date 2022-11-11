@@ -58,3 +58,4 @@ def userLogin_view(request):
 def userLogout_view(request):
     logout(request)
     return redirect('/')
+

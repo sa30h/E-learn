@@ -1,0 +1,64 @@
+{% extends "stuc/base.html" %}
+{% block title %}
+Login
+{% endblock title %}
+{% block content %}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+
+        <table class="table table-hover " >
+            <thead>
+              <tr >
+                <th scope="col py-3">Courses</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for item in courses %}
+               <tr class="card my-1">
+                    <th  scope="row"><a href="{% url "coursedetail" item.id %}" class="nav-link" onClick={setActiveTab}>{{item.title}}</a></th>
+                   </tr>
+                  
+                {% endfor %}
+           
+            
+            </tbody>
+          </table>
+
+        
+      </div>
+
+      <div class="col-6">
+
+        <table class="table table-hover " >
+            <thead>
+              <tr >
+                <th scope="col py-3">Career</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for item in careers %}
+               <tr class="card my-1">
+                    <th  scope="row"><a href="{% url "coursecareerdetail" item.id %}" class="nav-link" >{{item.career_name}}</a></th>
+                   </tr>
+                  
+                {% endfor %}
+           
+            
+            </tbody>
+          </table>
+
+        
+    </div>
+
+    </div>
+  </div>
+ 
+{% endblock content %}
+
+
+

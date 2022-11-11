@@ -9,7 +9,9 @@ from .serializers import CoursevisitorSerializer
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin,CreateModelMixin,RetrieveModelMixin,UpdateModelMixin,DestroyModelMixin
 import requests
-USER_PER_PAGE=1
+from django.db.models import Q
+
+USER_PER_PAGE=8
 # Create your views here.
 def allcourse(request):
     context={}
@@ -190,6 +192,25 @@ def Coursecareerdelete(request,id=None):
 
 
 
+def counselling_view(request):
+    context={}
+
+    if request.method=="POST":
+        skill=request.POST.get('skill')
+        interest=request.POST.get('interest')
+        courses=course.objects.filter(Q(course_name__icontains=skill) | Q(course_name__icontains=interest) | Q(title__icontains=skill) | Q(title__icontains=interest) ).order_by('title')
+        
+        careers=coursecareer.objects.filter(Q(skill__icontains=skill) | Q(skill__icontains=interest) | Q(career_name__icontains=skill) |Q(career_name__icontains=interest) ).order_by('career_name')    
+
+        context['courses']=courses
+        context['careers']=careers
+
+        return render(request,'course/counsellingresult.html',context)
+
+
+        
+
+    return render(request,'course/counselling.html',context)
 
 
 

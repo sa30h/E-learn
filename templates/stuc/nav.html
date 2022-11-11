@@ -20,7 +20,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'allcourse' %}">All Courses</a></li>
-            {% comment %} <li><a class="dropdown-item" href="{% url 'createcourse' %}">Add Course</a></li> {% endcomment %}
+            <li><a class="dropdown-item" href="{% url 'createcourse' %}">Add Course</a></li>
 
           </ul>
         </li>
@@ -30,12 +30,13 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'allcoursecareer' %}">All Course Related Career</a></li>
-            {% comment %} <li><a class="dropdown-item" href="{% url 'createcoursecareer' %}">Add Career</a></li> {% endcomment %}
+            <li><a class="dropdown-item" href="{% url 'createcoursecareer' %}">Add Career</a></li>
 
           </ul>
         </li>
+     
         <li class="nav-item">
-          {% comment %} <a class="nav-link" href="{% url 'userlogout' %}">Contact Us </a> {% endcomment %}
+          <a class="nav-link" href="{% url 'counselling' %}">Counselling</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'graph' %}">Statistics</a>

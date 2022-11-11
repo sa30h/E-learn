@@ -31,7 +31,9 @@ urlpatterns = [
     path('updatecoursecareer/<pk>/',views.U_Coursecareer,name='updatecoursecareer'),
     path('coursedetailcareer/<id>/',views.Coursecareerdetail,name='coursecareerdetail'),
     path('coursecareerdelete/<id>/',views.Coursecareerdelete,name='coursecareerdelete'),
-    # path('u_coursevisitor/<id>/',views.u_Coursevisitor,name='u_coursevisitor'),
+    path('counselling/',views.counselling_view,name='counselling'),
+
+
 
 
 

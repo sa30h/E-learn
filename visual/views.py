@@ -9,13 +9,13 @@ def graph(request):
     context={}
     data=coursevisitor.objects.values('course_name').annotate(visitorcount=Count('course_name')).order_by()
     coursename=course.objects.all().values('id','course_name')
-
+    print(coursename)
     datadict={}
     for i in coursename:
         for j in data:
             if(i['id']==j['course_name']):
                 datadict[i['course_name']]=j['visitorcount']
-
+    print(datadict)
     courselabellist=list(datadict.keys())
     visitorcountlist=list(datadict.values())
     context['courselabellist']=courselabellist
